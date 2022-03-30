@@ -7,5 +7,5 @@ RUN --mount=type=cache,target=/root/.m2 mvn -f "app/pom.xml" clean package
 # Package stage
 FROM openjdk:11-jre-slim
 COPY --from=build "app/target/config-service*.jar" "config-service.jar"
-EXPOSE 8888
+EXPOSE 8761
 ENTRYPOINT ["java","-jar","-DskipTests","config-service.jar"]
