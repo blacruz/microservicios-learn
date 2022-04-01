@@ -92,7 +92,7 @@ public class JwtProvider {
    * @param token
    * @return
    */
-  public String getUserIdFrom(String token) {
+  public String getUserIdFromToken(String token) {
     try {
       if (!validateToken(token)) {
         return "invalid token";
